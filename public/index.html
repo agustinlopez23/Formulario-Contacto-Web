@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Formulario JS</title>
+
+  <link rel="stylesheet" href="/css/style.css" />
+</head>
+
+<body>
+  <section id="container">
+    <div>
+      <h2>Contactame</h2>
+      <form method="post" id="form">
+        <input type="text" class="radius" name="nombre" id="nombre" pattern="^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$"
+          title="Nombre sólo acepta letras y espacios en blanco" placeholder="Nombre" autocomplete="off" required />
+        <p id="nombreError">
+          El Nombre debe contener solo letras, pueden ser mayusculas o minusculas.
+        </p>
+
+        <input type="email" class="radius" name="email" id="email" pattern="^(\w+[/./-]?){1,}@[a-z]+[/.]\w{2,}$"
+          title="Formato de correo inválido" placeholder="Email" autocomplete="off" required />
+        <p id="emailError">
+          El Email debe tener el formato tuemail@example.com.
+        </p>
+
+        <input type="tel" class="radius" name="telefono" id="telefono" pattern="[0-9]{10,11}"
+          title="Formato de telefono invalido. Sin 0 y sin 15. Ej:3511231231" placeholder="Telefono" autocomplete="off"
+          required />
+        <p id="telefonoError">
+          Formato de telefono invalido. Sin 0 y sin 15. Ej:3511231231.
+        </p>
+
+        <textarea id="mensaje" cols="30" rows="10" name="mensaje" placeholder="En que poodemos ayudarte?"
+          required></textarea>
+
+        <button id="enviar" name="enviar">Enviar</button>
+        <input type="hidden" name="contact_number">
+      </form>
+      <div id="warning"></div>
+    </div>
+  </section>
+
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+  <script type="text/javascript" src="/js/form.js">
+
+  </script>
+</body>
+
+</html>
